@@ -28,4 +28,9 @@ public class DB {
     public void addUsers(User user){
         users.put(user.getEmail(), user);
     }
+    
+    public boolean containsUser(User user){
+        if( users.containsKey( user.getEmail() ) ) { return true; }
+        return false;
+    }
 }

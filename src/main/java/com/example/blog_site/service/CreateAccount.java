@@ -22,7 +22,7 @@ public class CreateAccount {
         return false;
     }
 
-    public static boolean validateEmail(String email, DB database){
+    private static boolean validateEmail(String email, DB database){
         if(email == null || email.length()==0) { return false; }
         HashMap<String, User> users = database.getUsers();
         if(users.containsKey(email)){ return false;}
@@ -30,7 +30,7 @@ public class CreateAccount {
         return true;
     }
 
-    public static boolean validateUsername(String username, DB database){
+    private static boolean validateUsername(String username, DB database){
         if(username == null || username.length()==0){ return false; }
         HashMap<String, User> users = database.getUsers();
         for(String key:users.keySet()){
@@ -39,7 +39,7 @@ public class CreateAccount {
         return true;
     }
 
-    public static boolean validatePasswords(String password1, String password2){
+    private static boolean validatePasswords(String password1, String password2){
         if(password1 == null || password2 == null){ return false; }
         if( !password1.equals(password2) ){ return false;}
         if( password1.length() < 8 || password1.length() > 15){ return false;}
@@ -48,3 +48,6 @@ public class CreateAccount {
     }
 
 }
+
+
+
