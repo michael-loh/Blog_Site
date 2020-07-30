@@ -61,6 +61,28 @@ public class Test {
                 " embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend" +
                 " to repeat predefined chunks as necessary, making this the first true generator on the Internet.");
 
+        database.addUsers(u1);
+        database.addUsers(u2);
+        database.addUsers(u3);
+        database.addUsers(u4);
+        database.addUsers(u5);
+        database.addUsers(u6);
+        database.addUsers(u7);
+        database.addUsers(u8);
+        database.addUsers(u9);
+        database.addUsers(u10);
+
+        database.addBlog(b1);
+        database.addBlog(b2);
+        database.addBlog(b3);
+        database.addBlog(b4);
+        database.addBlog(b5);
+        database.addBlog(b6);
+        database.addBlog(b7);
+        database.addBlog(b8);
+        database.addBlog(b9);
+        database.addBlog(b10);
+
         return database;
     }
 }
