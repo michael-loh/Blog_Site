@@ -55,30 +55,24 @@
         <!-- Sidebar -->
         <nav id="sidebar" style="background-color: darkslategrey;">
             <div class="list-group list-group-flush" style="padding-top: 75px;">
-
-                <form action="/homepage">
-                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue; min-width:250px;">
-                        Homepage
-                    </button>
-                </form>
-
-                <form action="/myBlogs">
-                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
-                        My Blogs
-                    </button>
-                </form>
-
-                <form>
-                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue;">
+                    Homepage
+                </button>
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey;">
+                    My Blogs
+                </button>
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey;">
                     Profile
                 </button>
-                <form>
             </div>
         </nav>
         <!-- Page Content -->
         <div id="content">
-            <div class="container-fluid">
 
+            <div class="container-fluid">
+                <h1>
+                    ${username}
+                </h1>
                 <c:forEach var="blog" items="${blogs}">
                     <div class="container" style="border: 1px solid black">
                         <p> ${blog.getTitle()} </p>

@@ -19,7 +19,6 @@ public class DB {
         users = new HashMap<>();
         blogs = new ArrayList<>();
         likes = new ArrayList<>();
-        populate();
     }
 
     public HashMap<String, User> getUsers(){
