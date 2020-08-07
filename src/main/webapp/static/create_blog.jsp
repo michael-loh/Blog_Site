@@ -8,12 +8,12 @@
     <meta charset="utf-8">
 
 
-    <title>Homepage</title>
+    <title>Create Blog</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="/static/assets/homepage.css">
+    <link rel="stylesheet" href="/static/assets/create_blog.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -55,41 +55,44 @@
         <!-- Sidebar -->
         <nav id="sidebar" style="background-color: darkslategrey;">
             <div class="list-group list-group-flush" style="padding-top: 75px;">
-
-                <form action="/homepage">
-                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue; min-width:250px;">
-                        Homepage
-                    </button>
-                </form>
-
-                <form action="/myBlogs">
-                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
-                        My Blogs
-                    </button>
-                </form>
-
-                <form>
-                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue;">
+                    Homepage
+                </button>
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey;">
+                    My Blogs
+                </button>
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey;">
                     Profile
                 </button>
-                <form>
             </div>
         </nav>
+
         <!-- Page Content -->
         <div id="content">
-            <div class="container-fluid">
-
-                <c:forEach var="blog" items="${blogs}">
-                    <div class="container" style="border: 1px solid black">
-                        <p> ${blog.getTitle()} </p>
-                        <p> ${blog.getAuthor()} </p>
-                        <p> ${blog.getBody()} </p>
+            <div class="container" style="padding: 30px; width:1400px;">
+                <div class="card d-flex justify-content-center">
+                    <div class="card-header">
+                        <h1> Create a Blog </h1>
                     </div>
-                </c:forEach>
+                    <div class="card-body">
+                        <form action="/postBlog" method="POST">
+                            <div class="form-group">
+                                <label for="blog_title"> Blog Title </label>
+                                <input type="text" class="form-control" name="blog_title" id="blog_title" placeholder="Title">
+                            </div>
 
+                            <div class="form-group">
+                                <div class="form-group">
+                                    <label for="blog_title"> Blog Body </label>
+                                    <textarea class="form-control" name="blog_body" id="blog_body" rows="8"></textarea>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Post Blog</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-        </div>
 
     </div>
 
