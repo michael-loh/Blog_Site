@@ -8,7 +8,7 @@
     <meta charset="utf-8">
 
 
-    <title>Search</title>
+    <title>Search Page</title>
 
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -42,10 +42,19 @@
         <h3>
             Blog Site
         </h3>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
+        <div class="dropdown">
+
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Sign Out</a>
+
+            </div>
+        </div>
     </nav>
 
 
@@ -53,30 +62,49 @@
     <div class="wrapper">
 
         <!-- Sidebar -->
-        <nav id="sidebar">
-            <ul class="sidebar-nav">
-                <li>
-                    Homepage
-                </li>
-                <li>
-                    My Blogs
-                </li>
-                <li>
+        <nav id="sidebar" style="background-color: darkslategrey;">
+            <div class="list-group list-group-flush" style="padding-top: 75px;">
+
+                <form action="/homepage">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue; min-width:250px;">
+                        Homepage
+                    </button>
+                </form>
+
+                <form action="/myBlogs">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                        My Blogs
+                    </button>
+                </form>
+
+                <form>
+                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                     Profile
-                </li>
-            </ul>
+                </button>
+                <form>
+            </div>
         </nav>
-
         <!-- Page Content -->
-        <div id="content">
+        <div id="content" style="width:100%">
             <div class="container-fluid">
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-6">
+                            <center>
+                                <form class="form-inline" action="/search">
+                                    <div class="form-group">
+                                        <input class="border border-primary" type="search" id="search_bar" placeholder="Search" aria-label="Search">
+                                        <button class="btn border border-primary" type="submit">Search</button>
+                                    </div>
+                                </form>
+                            </center>
+                        </div>
+                        <div class="col"></div>
 
-            <c:forEach var="user" items="${users}">
-                <div class="container" style="border: 1px solid black">
-                    <p> ${user.getUsername()} </p>
+                    </div>
 
-                </div>
-            </c:forEach>
+
+            </div>
 
         </div>
 
