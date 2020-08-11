@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Controller
@@ -93,17 +94,15 @@ public class AppController {
     }
 
     @RequestMapping("/blogs")
-    public ModelAndView blogs(){
+    public ModelAndView blogs(@RequestParam("username") String username){
 
         database = Test.database();
 
         ModelAndView mav = new ModelAndView("/static/blogs.jsp");
 
-        String username = "user1";
         List<Blog> blogs = GetBlogs.getBlogsFromUser(username, database);
         mav.addObject("username", username);
         mav.addObject("blogs", blogs);
-
 
         return mav;
     }
@@ -127,6 +126,26 @@ public class AppController {
         return mav;
     }
 
+
+    @RequestMapping("/search_page")
+    public String search_page(){
+        return "/static/searchpage.jsp";
+    }
+
+    @RequestMapping("/search")
+    public ModelAndView search(@RequestParam("search") String search){
+
+        System.out.println("here");
+        ModelAndView mav = new ModelAndView("/static/searchpage.jsp");
+
+        List<String> searchResults = Search.genSearchResults(search, database);
+        Collections.sort(searchResults);
+
+        System.out.println(searchResults.toString());
+
+        mav.addObject("users", searchResults);
+        return mav;
+    }
 
 
 }

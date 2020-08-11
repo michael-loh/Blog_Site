@@ -81,33 +81,50 @@
                 <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                     Profile
                 </button>
-                <form>
+                </form>
             </div>
         </nav>
         <!-- Page Content -->
         <div id="content" style="width:100%">
             <div class="container-fluid">
-                    <div class="row">
-                        <div class="col"></div>
+
+                <!-- Search Bar -->
+                <div class="row" style="padding-bottom: 25px;">
+                    <div class="col"></div>
                         <div class="col-6">
                             <center>
-                                <form class="form-inline" action="/search">
+                                <form action="/search" method="POST">
                                     <div class="form-group">
-                                        <input class="border border-primary" type="search" id="search_bar" placeholder="Search" aria-label="Search">
-                                        <button class="btn border border-primary" type="submit">Search</button>
+                                        <h3>Search Users</h3>
+                                        <input type="text" class="form-control" name="search" id="search" placeholder="Title">
                                     </div>
+                                    <button type="submit" class="btn btn-primary">Search</button>
                                 </form>
                             </center>
                         </div>
-                        <div class="col"></div>
+                    <div class="col"></div>
+                </div>
 
-                    </div>
+                <!-- Display Searches -->
+                <div class="container">
+                    <c:forEach var="user" items="${users}">
+                        <div class="container" style="border: 1px solid black; width: 500px; padding: 5px;">
+
+                            <form action="/blogs">
+                                <div class="d-flex justify-content-between">
+                                    <input type="text" id="country" name="username" value="${user}" style="border: 0px;" readonly>
+                                    <button type="submit" class="btn btn-info">View Page</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </c:forEach>
+                </div>
+
 
 
             </div>
-
         </div>
-
     </div>
 
     <script>
