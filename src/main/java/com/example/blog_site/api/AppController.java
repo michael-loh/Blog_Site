@@ -128,5 +128,23 @@ public class AppController {
     }
 
 
+    @RequestMapping("/search")
+    public String search(){
+        return "/static/searchpage.jsp";
+    }
+
+    /*
+
+    @RequestMapping("/searchpage")
+    public ModelAndView searchpage(HttpSession session){
+        ModelAndView mav = new ModelAndView("/static/searchpage.jsp");
+
+
+        List<String> users = Search.genSearchResults(search, database);
+        mav.addObject("users", users);
+
+
+    }
+*/
 
 }
