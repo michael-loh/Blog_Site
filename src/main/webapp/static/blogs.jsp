@@ -65,13 +65,13 @@
             <div class="list-group list-group-flush" style="padding-top: 75px;">
 
                 <form action="/homepage">
-                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue; min-width:250px;">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                         Homepage
                     </button>
                 </form>
 
                 <form action="/myBlogs">
-                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue; min-width:250px;">
                         My Page
                     </button>
                 </form>
@@ -80,13 +80,13 @@
                     <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                         Create Blog
                     </button>
-                <form>
+                </form>
 
                 <form action="/search_page">
                     <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                         Search User
                     </button>
-                <form>
+                </form>
 
             </div>
         </nav>

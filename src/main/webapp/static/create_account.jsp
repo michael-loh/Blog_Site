@@ -44,7 +44,7 @@
                             </form>
 
                             <div class="d-flex justify-content-end">
-                                <a href="/create_account">Already have an account? Login</a>
+                                <a href="/login">Already have an account? Login</a>
                             </div>
                         </div>
                     </div>

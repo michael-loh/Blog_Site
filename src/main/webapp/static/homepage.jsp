@@ -80,13 +80,13 @@
                     <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                         Create Blog
                     </button>
-                <form>
+                </form>
 
                 <form action="/search_page">
                     <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
                         Search User
                     </button>
-                <form>
+                </form>
 
             </div>
         </nav>
