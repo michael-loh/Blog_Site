@@ -42,10 +42,18 @@
         <h3>
             Blog Site
         </h3>
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+
+        <div class="dropdown">
+
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-user"></i>
+            </button>
+
+            <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" href="#">Sign Out</a>
+            </div>
+
+        </div>
     </nav>
 
 
@@ -55,15 +63,31 @@
         <!-- Sidebar -->
         <nav id="sidebar" style="background-color: darkslategrey;">
             <div class="list-group list-group-flush" style="padding-top: 75px;">
-                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue;">
-                    Homepage
-                </button>
-                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey;">
-                    My Blogs
-                </button>
-                <button type="button" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey;">
-                    Profile
-                </button>
+
+                <form action="/homepage">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: cornflowerblue; min-width:250px;">
+                        Homepage
+                    </button>
+                </form>
+
+                <form action="/myBlogs">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                        My Page
+                    </button>
+                </form>
+
+                <form action="/create_blog">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                        Create Blog
+                    </button>
+                <form>
+
+                <form action="/search_page">
+                    <button type="submit" class="list-group-item list-group-item-action-primary" style="background-color: darkslategrey; min-width:250px;">
+                        Search User
+                    </button>
+                <form>
+
             </div>
         </nav>
 
