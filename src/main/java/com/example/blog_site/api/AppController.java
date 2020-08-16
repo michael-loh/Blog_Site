@@ -28,7 +28,7 @@ public class AppController {
 
     @RequestMapping("/login")
     public String login(){
-        database = Test.database();         //****TESTING METHOD CALL*****
+                 //****TESTING METHOD CALL*****
         return "/static/login.jsp";
     }
 
@@ -37,7 +37,7 @@ public class AppController {
                                    @RequestParam("password") String password,
                                    HttpSession session,
                                    ModelMap modelMap){
-        database = Test.database();
+
         if(Login.validateUser(email, password, database)){
             User user = database.getUsers().get(email);
             session.setAttribute("user", user);
@@ -102,7 +102,7 @@ public class AppController {
     @RequestMapping("/blogs")
     public ModelAndView blogs(@RequestParam("username") String username){
 
-        database = Test.database();
+
 
         ModelAndView mav = new ModelAndView("/static/blogs.jsp");
 

@@ -7,7 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Search {
-    String search;
 
     public static List<String> genSearchResults(String search, DB database){
         List<String> listUsernames = new ArrayList<>();
