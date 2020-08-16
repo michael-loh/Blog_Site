@@ -47,6 +47,12 @@ public class AppController {
         return "/login";
     }
 
+    @RequestMapping("/signout")
+    public String String(HttpSession session){
+        session.removeAttribute("user");
+        return "/login";
+    }
+
     @RequestMapping("/create_account")
     public String create_account(){
         return "/static/create_account.jsp";
@@ -146,6 +152,8 @@ public class AppController {
         mav.addObject("users", searchResults);
         return mav;
     }
+
+
 
 
 }
